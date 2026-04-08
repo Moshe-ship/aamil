@@ -9,7 +9,12 @@
 <meta property="og:title" content="عامل — Aamil | أول مساعد ذكي عربي على جهازك">
 <meta property="og:description" content="أول مساعد ذكاء اصطناعي عربي يعمل بالكامل على جهازك. بدون سحابة. بدون تتبع.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://aamil.app">
+<meta property="og:image" content="https://aamil.app/assets/training_evolution.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="عامل — Aamil | أول مساعد ذكي عربي على جهازك">
+<meta name="twitter:description" content="أول مساعد ذكاء اصطناعي عربي يعمل بالكامل على جهازك. بدون سحابة. بدون تتبع.">
+<meta name="twitter:image" content="https://aamil.app/assets/training_evolution.png">
 <meta name="twitter:creator" content="@Mosescreates">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230A0A0A' stroke='%23C4923A' stroke-width='4'/><text x='50' y='62' text-anchor='middle' fill='%23C4923A' font-size='36' font-family='system-ui'>عامل</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +27,13 @@
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
+img{max-width:100%;height:auto}
+
 :root{
   --bg:#0A0A0A;
   --bg-elevated:#111111;
   --bg-card:#141414;
+  --text:#FFFFFF;
   --white:#FFFFFF;
   --white-90:rgba(255,255,255,0.9);
   --white-70:rgba(255,255,255,0.7);
@@ -34,15 +42,42 @@
   --white-15:rgba(255,255,255,0.15);
   --white-08:rgba(255,255,255,0.08);
   --white-04:rgba(255,255,255,0.04);
+  --card-border:var(--white-08);
+  --nav-scrolled-bg:rgba(10,10,10,0.85);
   --gold:#C4923A;
   --gold-dark:#8B6914;
   --gold-dim:rgba(196,146,58,0.15);
   --gold-glow:rgba(196,146,58,0.08);
+  --footer-border:var(--white-08);
   --font-ar:-apple-system,"SF Arabic","Geeza Pro","Helvetica Neue",sans-serif;
   --font-en:'Inter',-apple-system,"SF Pro Display","Helvetica Neue",sans-serif;
   --ease:cubic-bezier(0.25,0.46,0.45,0.94);
   --ease-out:cubic-bezier(0,0,0.2,1);
   --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+
+@media(prefers-color-scheme:light){
+  :root{
+    --bg:#FAFAFA;
+    --bg-elevated:#FFFFFF;
+    --bg-card:#FFFFFF;
+    --text:#111111;
+    --white:#111111;
+    --white-90:rgba(17,17,17,0.9);
+    --white-70:rgba(17,17,17,0.7);
+    --white-50:rgba(17,17,17,0.5);
+    --white-30:rgba(17,17,17,0.3);
+    --white-15:rgba(17,17,17,0.15);
+    --white-08:rgba(17,17,17,0.08);
+    --white-04:rgba(17,17,17,0.04);
+    --card-border:rgba(17,17,17,0.1);
+    --nav-scrolled-bg:rgba(250,250,250,0.85);
+    --gold:#A87B2E;
+    --gold-dark:#7A5A1A;
+    --gold-dim:rgba(168,123,46,0.12);
+    --gold-glow:rgba(168,123,46,0.06);
+    --footer-border:rgba(17,17,17,0.08);
+  }
 }
 
 html{
@@ -54,7 +89,7 @@ html{
 body{
   font-family:var(--font-ar);
   background:var(--bg);
-  color:var(--white);
+  color:var(--text);
   line-height:1.7;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
@@ -103,11 +138,11 @@ nav{
   transition:background 0.4s var(--ease), backdrop-filter 0.4s var(--ease), padding 0.4s var(--ease);
 }
 nav.scrolled{
-  background:rgba(10,10,10,0.85);
+  background:var(--nav-scrolled-bg);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   backdrop-filter:saturate(180%) blur(20px);
   padding:14px 0;
-  border-bottom:1px solid var(--white-08);
+  border-bottom:1px solid var(--card-border);
 }
 .nav-inner{
   display:flex;
@@ -117,7 +152,7 @@ nav.scrolled{
 .nav-logo{
   font-size:1.4rem;
   font-weight:700;
-  color:var(--white);
+  color:var(--text);
   text-decoration:none;
   letter-spacing:-0.02em;
 }
@@ -125,7 +160,7 @@ nav.scrolled{
   color:var(--gold);
   font-size:0.6em;
   font-weight:400;
-  margin-right:8px;
+  margin-inline-start:8px;
   opacity:0.8;
   font-family:var(--font-en);
 }
@@ -140,7 +175,7 @@ nav.scrolled{
   font-size:0.85rem;
   transition:color 0.3s;
 }
-.nav-links a:hover{color:var(--white)}
+.nav-links a:hover{color:var(--text)}
 
 /* ── HERO ── */
 .hero{
@@ -254,7 +289,7 @@ nav.scrolled{
   align-items:center;
   gap:12px;
   padding:16px 40px;
-  background:var(--white);
+  background:var(--text);
   color:var(--bg);
   border:none;
   border-radius:14px;
@@ -267,7 +302,7 @@ nav.scrolled{
 }
 .appstore-btn:hover{
   transform:scale(1.03);
-  box-shadow:0 8px 40px rgba(255,255,255,0.1);
+  box-shadow:0 8px 40px rgba(0,0,0,0.1);
 }
 .appstore-btn svg{width:22px;height:22px;flex-shrink:0}
 
@@ -345,7 +380,7 @@ section{padding:120px 0}
   transition:opacity 0.4s;
 }
 .feature-card:hover::before{opacity:1}
-.feature-card:hover{background:rgba(255,255,255,0.03)}
+.feature-card:hover{background:var(--white-04)}
 
 .feature-icon{
   width:48px;
@@ -396,7 +431,7 @@ section{padding:120px 0}
   gap:14px;
 }
 .model-card{
-  border:1px solid var(--white-08);
+  border:1px solid var(--card-border);
   border-radius:20px;
   padding:32px 24px;
   text-align:center;
@@ -405,7 +440,7 @@ section{padding:120px 0}
   background:var(--white-04);
 }
 .model-card:hover{
-  border-color:var(--white-15);
+  border-color:var(--white-30);
   transform:translateY(-4px);
 }
 .model-card.featured{
@@ -490,7 +525,7 @@ section{padding:120px 0}
 .stat-card{
   text-align:center;
   padding:40px 24px;
-  border:1px solid var(--white-08);
+  border:1px solid var(--card-border);
   border-radius:20px;
   background:var(--white-04);
 }
@@ -520,7 +555,7 @@ section{padding:120px 0}
   gap:24px;
 }
 .chart-placeholder{
-  border:1px solid var(--white-08);
+  border:1px solid var(--card-border);
   border-radius:20px;
   background:var(--white-04);
   padding:32px;
@@ -639,7 +674,7 @@ section{padding:120px 0}
   align-items:center;
   gap:10px;
   padding:14px 28px;
-  border:1px solid var(--white-08);
+  border:1px solid var(--card-border);
   border-radius:14px;
   color:var(--white-70);
   text-decoration:none;
@@ -650,7 +685,7 @@ section{padding:120px 0}
 }
 .built-by-link:hover{
   border-color:var(--gold-dark);
-  color:var(--white);
+  color:var(--text);
   background:var(--gold-dim);
 }
 .built-by-link svg{width:18px;height:18px;flex-shrink:0}
@@ -658,14 +693,14 @@ section{padding:120px 0}
 /* ── FOOTER ── */
 footer{
   padding:48px 0;
-  border-top:1px solid var(--white-08);
+  border-top:1px solid var(--footer-border);
   background:var(--bg);
 }
 .footer-privacy{
   text-align:center;
   margin-bottom:32px;
   padding:20px;
-  border:1px solid var(--white-08);
+  border:1px solid var(--card-border);
   border-radius:16px;
   background:var(--white-04);
 }
@@ -710,7 +745,7 @@ footer{
   align-items:center;
   gap:6px;
 }
-.footer-links a:hover{color:var(--white)}
+.footer-links a:hover{color:var(--text)}
 .footer-links svg{width:14px;height:14px}
 
 /* ══════════════════════════════════════════
@@ -752,6 +787,85 @@ footer{
   .timeline-item{padding-right:40px}
 }
 
+@media(max-width:375px){
+  .container{padding:0 16px}
+  .hero h1{font-size:2.4rem}
+  .hero-subtitle{font-size:1rem}
+  .section-title{font-size:1.7rem}
+  .feature-card{padding:28px 20px}
+  .model-card{padding:24px 16px}
+  .appstore-btn{padding:12px 24px;font-size:0.9rem;gap:8px}
+  .stat-card{padding:28px 16px}
+  .timeline-item{padding-right:36px}
+  .built-by-link{padding:12px 20px;font-size:0.85rem}
+}
+
+/* ══════════════════════════════════════════
+   LIGHT MODE OVERRIDES
+   ══════════════════════════════════════════ */
+
+@media(prefers-color-scheme:light){
+  .hero-icon{
+    background:linear-gradient(145deg,#f0f0f0 0%,#e0e0e0 100%);
+    border-color:var(--gold-dark);
+    box-shadow:
+      0 0 60px rgba(168,123,46,0.08),
+      0 20px 60px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+  .hero-icon::after{
+    background:linear-gradient(145deg,rgba(168,123,46,0.15),transparent 50%);
+  }
+  .hero::before{
+    background:radial-gradient(circle,rgba(168,123,46,0.06) 0%,transparent 65%);
+  }
+  .hero h1 .title-ar{
+    background:linear-gradient(180deg,#111 40%,rgba(17,17,17,0.5) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+  }
+  .stat-number{
+    background:linear-gradient(180deg,#111 30%,rgba(17,17,17,0.5) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+  }
+  .feature-card:hover{background:rgba(0,0,0,0.02)}
+  .feature-card::before{
+    background:linear-gradient(135deg,rgba(168,123,46,0.05) 0%,transparent 60%);
+  }
+  .model-card:hover{
+    border-color:rgba(17,17,17,0.15);
+  }
+  .model-card.featured{
+    border-color:rgba(168,123,46,0.35);
+    background:rgba(168,123,46,0.04);
+  }
+  .models{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg-elevated) 50%,var(--bg) 100%);
+  }
+  .changelog{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg-elevated) 100%);
+  }
+  .chart-label{
+    background:rgba(250,250,250,0.8);
+    color:var(--white-50);
+  }
+  .timeline-dot{
+    background:var(--bg);
+    border-color:var(--gold);
+  }
+  .timeline-item:first-child .timeline-dot{
+    background:var(--gold);
+  }
+  .hero-scroll svg{stroke:var(--text)}
+  .model-badge{
+    background:rgba(17,17,17,0.06);
+  }
+  .model-badge.size{
+    background:rgba(168,123,46,0.1);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -788,11 +902,11 @@ footer{
     <p class="hero-subtitle reveal reveal-d2">أول مساعد ذكي عربي يعمل بالكامل على جهازك</p>
     <p class="hero-subtitle-en reveal reveal-d2 en">First Arabic AI assistant that runs entirely on your device</p>
     <div class="reveal reveal-d3">
-      <a href="https://testflight.apple.com/join/6P9t23VG" class="appstore-btn" aria-label="جرّب عبر TestFlight" target="_blank" rel="noopener">
+      <a href="https://testflight.apple.com/join/6P9t23VG" class="appstore-btn" aria-label="جرّب عبر TestFlight" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         جرّب عامل الآن — TestFlight
       </a>
-      <p style="margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.4);max-width:400px;text-align:center;line-height:1.6">
+      <p style="margin-top:16px;font-size:0.82rem;color:var(--white-50);max-width:400px;text-align:center;line-height:1.6;margin-left:auto;margin-right:auto">
         افتح الرابط من iPhone &larr; ثبّت تطبيق TestFlight من App Store إذا ما عندك &larr; ارجع للرابط واضغط "Accept" &larr; حمّل عامل
       </p>
     </div>
@@ -1035,8 +1149,8 @@ footer{
         جرّب عبر TestFlight
       </a>
     </div>
-    <p class="reveal reveal-d2" style="margin-top:24px;font-size:0.85rem;color:rgba(255,255,255,0.35);max-width:500px;text-align:center;line-height:1.7">
-      <strong style="color:rgba(255,255,255,0.5)">كيف تجرّب عامل؟</strong><br>
+    <p class="reveal reveal-d2" style="margin-top:24px;font-size:0.85rem;color:var(--white-30);max-width:500px;margin-left:auto;margin-right:auto;text-align:center;line-height:1.7">
+      <strong style="color:var(--white-50)">كيف تجرّب عامل؟</strong><br>
       1. افتح الرابط من iPhone<br>
       2. ثبّت تطبيق TestFlight من App Store إذا ما عندك<br>
       3. ارجع للرابط واضغط "Accept"<br>
@@ -1060,7 +1174,7 @@ footer{
         <small>&copy; 2026 Majana LLC</small>
       </div>
       <div class="footer-links">
-        <a href="#">
+        <a href="https://github.com/Mosescreates" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
