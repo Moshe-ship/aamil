@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عامل — Aamil | أول مساعد ذكي عربي على جهازك</title>
+<meta name="description" content="عامل — أول مساعد ذكاء اصطناعي عربي يعمل بالكامل على جهازك. بدون سحابة. بدون تتبع. خصوصية كاملة.">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="عامل — Aamil | أول مساعد ذكي عربي على جهازك">
+<meta property="og:description" content="أول مساعد ذكاء اصطناعي عربي يعمل بالكامل على جهازك. بدون سحابة. بدون تتبع.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@Mosescreates">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230A0A0A' stroke='%23C4923A' stroke-width='4'/><text x='50' y='62' text-anchor='middle' fill='%23C4923A' font-size='36' font-family='system-ui'>عامل</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   AAMIL LANDING PAGE — PRODUCTION CSS
+   ══════════════════════════════════════════ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0A0A0A;
+  --bg-elevated:#111111;
+  --bg-card:#141414;
+  --white:#FFFFFF;
+  --white-90:rgba(255,255,255,0.9);
+  --white-70:rgba(255,255,255,0.7);
+  --white-50:rgba(255,255,255,0.5);
+  --white-30:rgba(255,255,255,0.3);
+  --white-15:rgba(255,255,255,0.15);
+  --white-08:rgba(255,255,255,0.08);
+  --white-04:rgba(255,255,255,0.04);
+  --gold:#C4923A;
+  --gold-dark:#8B6914;
+  --gold-dim:rgba(196,146,58,0.15);
+  --gold-glow:rgba(196,146,58,0.08);
+  --font-ar:-apple-system,"SF Arabic","Geeza Pro","Helvetica Neue",sans-serif;
+  --font-en:'Inter',-apple-system,"SF Pro Display","Helvetica Neue",sans-serif;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out:cubic-bezier(0,0,0.2,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+
+body{
+  font-family:var(--font-ar);
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ── Utilities ── */
+.container{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.en{
+  font-family:var(--font-en);
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+
+.gold{color:var(--gold)}
+
+/* ── Reveal Animations ── */
+.reveal{
+  opacity:0;
+  transform:translateY(32px);
+  transition:opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.reveal-d1{transition-delay:0.1s}
+.reveal-d2{transition-delay:0.2s}
+.reveal-d3{transition-delay:0.3s}
+.reveal-d4{transition-delay:0.4s}
+.reveal-d5{transition-delay:0.5s}
+
+/* ── Navigation ── */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  padding:20px 0;
+  transition:background 0.4s var(--ease), backdrop-filter 0.4s var(--ease), padding 0.4s var(--ease);
+}
+nav.scrolled{
+  background:rgba(10,10,10,0.85);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  backdrop-filter:saturate(180%) blur(20px);
+  padding:14px 0;
+  border-bottom:1px solid var(--white-08);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.nav-logo{
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--white);
+  text-decoration:none;
+  letter-spacing:-0.02em;
+}
+.nav-logo .logo-en{
+  color:var(--gold);
+  font-size:0.6em;
+  font-weight:400;
+  margin-right:8px;
+  opacity:0.8;
+  font-family:var(--font-en);
+}
+.nav-links{
+  display:flex;
+  gap:28px;
+  list-style:none;
+}
+.nav-links a{
+  color:var(--white-50);
+  text-decoration:none;
+  font-size:0.85rem;
+  transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--white)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 24px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,var(--gold-glow) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* App Icon */
+.hero-icon{
+  width:120px;
+  height:120px;
+  margin:0 auto 40px;
+  border-radius:28px;
+  background:linear-gradient(145deg,#1a1a1a 0%,#0a0a0a 100%);
+  border:2px solid var(--gold-dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  animation:icon-float 4s ease-in-out infinite;
+  box-shadow:
+    0 0 60px rgba(196,146,58,0.1),
+    0 20px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.hero-icon::after{
+  content:'';
+  position:absolute;
+  inset:-4px;
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(196,146,58,0.2),transparent 50%);
+  z-index:-1;
+  opacity:0.6;
+}
+.hero-icon-text{
+  font-size:2.2rem;
+  font-weight:800;
+  color:var(--gold);
+  line-height:1;
+}
+@keyframes icon-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+.hero h1{
+  font-size:clamp(2.8rem,7vw,5rem);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1.15;
+  margin-bottom:4px;
+}
+.hero h1 .title-ar{
+  display:block;
+  background:linear-gradient(180deg,var(--white) 40%,var(--white-50) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero h1 .title-en{
+  display:block;
+  font-family:var(--font-en);
+  font-size:0.45em;
+  font-weight:300;
+  color:var(--gold);
+  -webkit-text-fill-color:var(--gold);
+  letter-spacing:0.08em;
+  margin-top:8px;
+  direction:ltr;
+}
+
+.hero-subtitle{
+  font-size:clamp(1.05rem,2.5vw,1.4rem);
+  color:var(--white-70);
+  font-weight:400;
+  line-height:1.7;
+  margin-bottom:12px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-subtitle-en{
+  font-family:var(--font-en);
+  font-size:clamp(0.85rem,1.5vw,1rem);
+  color:var(--white-30);
+  direction:ltr;
+  font-weight:300;
+  margin-bottom:48px;
+}
+
+/* App Store Button */
+.appstore-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 40px;
+  background:var(--white);
+  color:var(--bg);
+  border:none;
+  border-radius:14px;
+  font-size:1rem;
+  font-weight:600;
+  font-family:var(--font-ar);
+  cursor:pointer;
+  text-decoration:none;
+  transition:transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.appstore-btn:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 40px rgba(255,255,255,0.1);
+}
+.appstore-btn svg{width:22px;height:22px;flex-shrink:0}
+
+.hero-scroll{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:0.25;
+  animation:scroll-hint 2.5s var(--ease) infinite;
+}
+@keyframes scroll-hint{
+  0%,100%{transform:translateX(-50%) translateY(0);opacity:0.25}
+  50%{transform:translateX(-50%) translateY(10px);opacity:0.5}
+}
+
+/* ── Shared Section ── */
+section{padding:120px 0}
+.section-label{
+  font-size:0.72rem;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  color:var(--gold);
+  margin-bottom:14px;
+  font-family:var(--font-en);
+  direction:ltr;
+  display:inline-block;
+  font-weight:600;
+}
+.section-title{
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.3;
+  margin-bottom:16px;
+}
+.section-title-en{
+  font-family:var(--font-en);
+  font-size:clamp(0.85rem,1.5vw,1rem);
+  color:var(--white-30);
+  direction:ltr;
+  font-weight:300;
+  margin-bottom:12px;
+}
+.section-desc{
+  font-size:1.05rem;
+  color:var(--white-50);
+  max-width:600px;
+  line-height:1.8;
+}
+
+/* ── FEATURES ── */
+.features{background:var(--bg)}
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  margin-top:64px;
+  border-radius:24px;
+  overflow:hidden;
+}
+.feature-card{
+  background:var(--bg-elevated);
+  padding:44px 36px;
+  position:relative;
+  transition:background 0.4s var(--ease);
+  overflow:hidden;
+}
+.feature-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(196,146,58,0.03) 0%,transparent 60%);
+  opacity:0;
+  transition:opacity 0.4s;
+}
+.feature-card:hover::before{opacity:1}
+.feature-card:hover{background:rgba(255,255,255,0.03)}
+
+.feature-icon{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  background:var(--gold-dim);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  margin-bottom:20px;
+}
+.feature-card h3{
+  font-size:1.15rem;
+  font-weight:700;
+  margin-bottom:8px;
+  line-height:1.5;
+}
+.feature-card .feat-desc{
+  color:var(--white-50);
+  font-size:0.9rem;
+  line-height:1.7;
+  margin-bottom:10px;
+}
+.feature-card .feat-en{
+  font-family:var(--font-en);
+  font-size:0.78rem;
+  color:var(--white-30);
+  direction:ltr;
+  font-weight:400;
+}
+
+/* ── MODELS ── */
+.models{
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg-elevated) 50%,var(--bg) 100%);
+}
+.models-header{
+  text-align:center;
+  margin-bottom:64px;
+}
+.models-header .section-desc{
+  margin:0 auto;
+  text-align:center;
+}
+.models-scroll{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+.model-card{
+  border:1px solid var(--white-08);
+  border-radius:20px;
+  padding:32px 24px;
+  text-align:center;
+  position:relative;
+  transition:border-color 0.4s var(--ease), transform 0.3s var(--ease), background 0.4s;
+  background:var(--white-04);
+}
+.model-card:hover{
+  border-color:var(--white-15);
+  transform:translateY(-4px);
+}
+.model-card.featured{
+  border-color:rgba(196,146,58,0.35);
+  background:rgba(196,146,58,0.04);
+}
+.model-card.featured::before{
+  content:'';
+  position:absolute;
+  top:-1px;left:20%;right:20%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.model-rec{
+  position:absolute;
+  top:12px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:3px 12px;
+  border-radius:100px;
+  font-size:0.65rem;
+  font-weight:700;
+  background:var(--gold);
+  color:var(--bg);
+  letter-spacing:0.06em;
+  font-family:var(--font-en);
+  white-space:nowrap;
+}
+
+.model-name{
+  font-size:1.15rem;
+  font-weight:700;
+  font-family:var(--font-en);
+  direction:ltr;
+  margin-bottom:4px;
+  margin-top:8px;
+}
+.model-card.featured .model-name{margin-top:22px}
+.model-ar-desc{
+  font-size:0.85rem;
+  color:var(--white-50);
+  margin-bottom:20px;
+  line-height:1.5;
+}
+.model-badges{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.model-badge{
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:8px;
+  font-size:0.7rem;
+  font-weight:600;
+  background:var(--white-08);
+  color:var(--white-50);
+  font-family:var(--font-en);
+  direction:ltr;
+}
+.model-badge.size{background:rgba(196,146,58,0.12);color:var(--gold)}
+
+/* ── TRAINING RESULTS ── */
+.training{background:var(--bg)}
+.training-header{
+  text-align:center;
+  margin-bottom:64px;
+}
+.training-header .section-desc{
+  margin:0 auto;
+  text-align:center;
+}
+
+.training-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:64px;
+}
+.stat-card{
+  text-align:center;
+  padding:40px 24px;
+  border:1px solid var(--white-08);
+  border-radius:20px;
+  background:var(--white-04);
+}
+.stat-number{
+  font-size:clamp(2.5rem,5vw,3.5rem);
+  font-weight:800;
+  font-family:var(--font-en);
+  direction:ltr;
+  line-height:1;
+  margin-bottom:8px;
+  background:linear-gradient(180deg,var(--white) 30%,var(--white-50) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.stat-number .accent{
+  -webkit-text-fill-color:var(--gold);
+}
+.stat-label{
+  font-size:0.95rem;
+  color:var(--white-50);
+}
+
+.training-charts{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.chart-placeholder{
+  border:1px solid var(--white-08);
+  border-radius:20px;
+  background:var(--white-04);
+  padding:32px;
+  aspect-ratio:16/10;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.chart-placeholder img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:12px;
+}
+.chart-label{
+  position:absolute;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.8rem;
+  color:var(--white-30);
+  background:rgba(10,10,10,0.8);
+  padding:6px 16px;
+  border-radius:8px;
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+  white-space:nowrap;
+}
+
+/* ── VERSION HIGHLIGHTS ── */
+.changelog{
+  background:linear-gradient(180deg,var(--bg) 0%,var(--bg-elevated) 100%);
+}
+.changelog-header{
+  text-align:center;
+  margin-bottom:64px;
+}
+.timeline{
+  max-width:700px;
+  margin:0 auto;
+  position:relative;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:19px;
+  width:2px;
+  background:linear-gradient(180deg,var(--gold),var(--white-08));
+}
+.timeline-item{
+  position:relative;
+  padding:0 52px 40px 0;
+}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-dot{
+  position:absolute;
+  top:6px;
+  right:12px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--bg);
+  border:2px solid var(--gold);
+  z-index:1;
+}
+.timeline-item:first-child .timeline-dot{
+  background:var(--gold);
+  box-shadow:0 0 12px rgba(196,146,58,0.4);
+}
+.timeline-title{
+  font-size:1.05rem;
+  font-weight:700;
+  margin-bottom:4px;
+  line-height:1.5;
+}
+.timeline-en{
+  font-family:var(--font-en);
+  font-size:0.82rem;
+  color:var(--white-30);
+  direction:ltr;
+  font-weight:400;
+}
+
+/* ── BUILT BY ── */
+.built-by{
+  background:var(--bg);
+  text-align:center;
+  padding:100px 0;
+}
+.built-by-title{
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:700;
+  margin-bottom:8px;
+  line-height:1.5;
+}
+.built-by-en{
+  font-family:var(--font-en);
+  font-size:clamp(0.9rem,1.5vw,1.1rem);
+  color:var(--white-30);
+  direction:ltr;
+  font-weight:300;
+  margin-bottom:36px;
+}
+.built-by-links{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.built-by-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  border:1px solid var(--white-08);
+  border-radius:14px;
+  color:var(--white-70);
+  text-decoration:none;
+  font-size:0.95rem;
+  font-family:var(--font-en);
+  direction:ltr;
+  transition:border-color 0.3s, color 0.3s, background 0.3s;
+}
+.built-by-link:hover{
+  border-color:var(--gold-dark);
+  color:var(--white);
+  background:var(--gold-dim);
+}
+.built-by-link svg{width:18px;height:18px;flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{
+  padding:48px 0;
+  border-top:1px solid var(--white-08);
+  background:var(--bg);
+}
+.footer-privacy{
+  text-align:center;
+  margin-bottom:32px;
+  padding:20px;
+  border:1px solid var(--white-08);
+  border-radius:16px;
+  background:var(--white-04);
+}
+.footer-privacy p{
+  font-size:0.95rem;
+  color:var(--white-50);
+  line-height:1.8;
+}
+.footer-privacy .lock{
+  font-size:1.2rem;
+  display:block;
+  margin-bottom:8px;
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:24px;
+}
+.footer-brand{
+  font-size:1rem;
+  font-weight:600;
+}
+.footer-brand small{
+  display:block;
+  font-weight:300;
+  color:var(--white-30);
+  font-size:0.78rem;
+  margin-top:4px;
+}
+.footer-links{
+  display:flex;
+  gap:24px;
+}
+.footer-links a{
+  color:var(--white-30);
+  text-decoration:none;
+  font-size:0.82rem;
+  transition:color 0.3s;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.footer-links a:hover{color:var(--white)}
+.footer-links svg{width:14px;height:14px}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media(max-width:1024px){
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .models-scroll{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:768px){
+  section{padding:80px 0}
+  .features-grid{grid-template-columns:1fr}
+  .models-scroll{grid-template-columns:repeat(2,1fr)}
+  .training-stats{grid-template-columns:1fr}
+  .training-charts{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hero{padding:100px 20px 60px}
+  .hero-icon{width:96px;height:96px;border-radius:22px;margin-bottom:32px}
+  .hero-icon-text{font-size:1.8rem}
+  .timeline::before{right:15px}
+  .timeline-item{padding-right:44px}
+  .timeline-dot{right:8px}
+}
+
+@media(max-width:480px){
+  section{padding:64px 0}
+  .feature-card{padding:32px 24px}
+  .models-scroll{grid-template-columns:1fr}
+  .model-card{padding:28px 20px}
+  .hero{padding:90px 16px 50px}
+  .hero-icon{width:80px;height:80px;border-radius:18px;margin-bottom:28px}
+  .hero-icon-text{font-size:1.5rem}
+  .appstore-btn{padding:14px 32px;font-size:0.95rem}
+  .built-by-links{flex-direction:column;align-items:center}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center;flex-wrap:wrap}
+  .timeline-item{padding-right:40px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">عامل <span class="logo-en">Aamil</span></a>
+    <ul class="nav-links">
+      <li><a href="#features">المميزات</a></li>
+      <li><a href="#models">النماذج</a></li>
+      <li><a href="#training">التدريب</a></li>
+      <li><a href="#changelog">الجديد</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-icon" aria-hidden="true">
+        <span class="hero-icon-text">عامل</span>
+      </div>
+    </div>
+    <h1 class="reveal reveal-d1">
+      <span class="title-ar">عامل</span>
+      <span class="title-en">A A M I L</span>
+    </h1>
+    <p class="hero-subtitle reveal reveal-d2">أول مساعد ذكي عربي يعمل بالكامل على جهازك</p>
+    <p class="hero-subtitle-en reveal reveal-d2 en">First Arabic AI assistant that runs entirely on your device</p>
+    <div class="reveal reveal-d3">
+      <a href="https://testflight.apple.com/join/6P9t23VG" class="appstore-btn" aria-label="جرّب عبر TestFlight" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        جرّب عامل الآن — TestFlight
+      </a>
+      <p style="margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.4);max-width:400px;text-align:center;line-height:1.6">
+        افتح الرابط من iPhone &larr; ثبّت تطبيق TestFlight من App Store إذا ما عندك &larr; ارجع للرابط واضغط "Accept" &larr; حمّل عامل
+      </p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FEATURES
+     ══════════════════════════════════════════ -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label">Features</span>
+      <h2 class="section-title">كل ما تحتاجه. على جهازك.</h2>
+      <p class="section-desc" style="margin:0 auto;text-align:center">ست قدرات أساسية تجعل عامل مساعدك الذكي الأول.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card reveal reveal-d1">
+        <div class="feature-icon" aria-hidden="true">&#x1F9E0;</div>
+        <h3>ذكاء على الجهاز</h3>
+        <p class="feat-desc">نماذج ذكاء اصطناعي تعمل محليا باستخدام MLX وقوة Apple Silicon. بدون سيرفرات خارجية.</p>
+        <span class="feat-en">On-device AI &mdash; MLX + Apple Silicon</span>
+      </div>
+
+      <div class="feature-card reveal reveal-d2">
+        <div class="feature-icon" aria-hidden="true">&#x1F1F8;&#x1F1E6;</div>
+        <h3>عربي أولا</h3>
+        <p class="feat-desc">مصمّم للعربية من الأساس. يدعم 10 لهجات عربية مع تصميم RTL كامل.</p>
+        <span class="feat-en">Arabic First &mdash; 10 dialects, RTL native</span>
+      </div>
+
+      <div class="feature-card reveal reveal-d3">
+        <div class="feature-icon" aria-hidden="true">&#x1F6E0;&#xFE0F;</div>
+        <h3>أدوات حقيقية</h3>
+        <p class="feat-desc">مواقيت الصلاة، التاريخ الهجري، حالة الطقس، وحاسبة الزكاة. كلها تعمل بدون إنترنت.</p>
+        <span class="feat-en">Real Tools &mdash; Prayer times, Hijri, weather, zakat</span>
+      </div>
+
+      <div class="feature-card reveal reveal-d1">
+        <div class="feature-icon" aria-hidden="true">&#x1F4F7;</div>
+        <h3>كاميرا ذكية</h3>
+        <p class="feat-desc">صوّر أي شيء والذكاء الاصطناعي يحلله لك. نصوص عربية، فواتير، مستندات.</p>
+        <span class="feat-en">Smart Camera &mdash; VLM image analysis</span>
+      </div>
+
+      <div class="feature-card reveal reveal-d2">
+        <div class="feature-icon" aria-hidden="true">&#x1F50A;</div>
+        <h3>صوت طبيعي</h3>
+        <p class="feat-desc">تحدّث بالعربية والذكاء الاصطناعي يفهمك ويرد عليك بصوت طبيعي.</p>
+        <span class="feat-en">Natural Voice &mdash; Arabic TTS + speech recognition</span>
+      </div>
+
+      <div class="feature-card reveal reveal-d3">
+        <div class="feature-icon" aria-hidden="true">&#x1F512;</div>
+        <h3>خصوصية كاملة</h3>
+        <p class="feat-desc">بياناتك لا تغادر جهازك أبدا. لا سيرفرات. لا تتبع. لا بيع بيانات.</p>
+        <span class="feat-en">Complete Privacy &mdash; No servers, no data sent</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MODELS
+     ══════════════════════════════════════════ -->
+<section class="models" id="models">
+  <div class="container">
+    <div class="models-header reveal">
+      <span class="section-label">Models</span>
+      <h2 class="section-title">اختر النموذج المناسب لك</h2>
+      <p class="section-desc">نماذج بأحجام مختلفة. كلها مدرّبة على العربية.</p>
+    </div>
+    <div class="models-scroll">
+
+      <div class="model-card reveal reveal-d1">
+        <div class="model-name">Qwen 3.5 0.8B</div>
+        <div class="model-ar-desc">الأسرع</div>
+        <div class="model-badges">
+          <span class="model-badge size">0.5 GB</span>
+          <span class="model-badge">~2 GB RAM</span>
+        </div>
+      </div>
+
+      <div class="model-card reveal reveal-d2">
+        <div class="model-name">Aamil 1.5B</div>
+        <div class="model-ar-desc">خفيف وسريع</div>
+        <div class="model-badges">
+          <span class="model-badge size">0.8 GB</span>
+          <span class="model-badge">~3 GB RAM</span>
+        </div>
+      </div>
+
+      <div class="model-card featured reveal reveal-d3">
+        <div class="model-rec">RECOMMENDED</div>
+        <div class="model-name">Aamil 2B</div>
+        <div class="model-ar-desc">متوازن ومُوصى به</div>
+        <div class="model-badges">
+          <span class="model-badge size">1.1 GB</span>
+          <span class="model-badge">~4 GB RAM</span>
+        </div>
+      </div>
+
+      <div class="model-card reveal reveal-d4">
+        <div class="model-name">Aamil 4B</div>
+        <div class="model-ar-desc">جودة عالية</div>
+        <div class="model-badges">
+          <span class="model-badge size">2.4 GB</span>
+          <span class="model-badge">~5 GB RAM</span>
+        </div>
+      </div>
+
+      <div class="model-card reveal reveal-d5">
+        <div class="model-name">Gemma 4 E4B</div>
+        <div class="model-ar-desc">أعلى جودة</div>
+        <div class="model-badges">
+          <span class="model-badge size">5.2 GB</span>
+          <span class="model-badge">~8 GB RAM</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TRAINING RESULTS
+     ══════════════════════════════════════════ -->
+<section class="training" id="training">
+  <div class="container">
+    <div class="training-header reveal">
+      <span class="section-label">Training Results</span>
+      <h2 class="section-title">نتائج التدريب</h2>
+      <p class="section-title-en en">Training Results</p>
+    </div>
+
+    <div class="training-stats">
+      <div class="stat-card reveal reveal-d1">
+        <div class="stat-number">83<span class="accent">%</span></div>
+        <div class="stat-label">أفضل نتيجة</div>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <div class="stat-number">10</div>
+        <div class="stat-label">فئات تقييم</div>
+      </div>
+      <div class="stat-card reveal reveal-d3">
+        <div class="stat-number">27</div>
+        <div class="stat-label">نموذج متاح</div>
+      </div>
+    </div>
+
+    <div class="training-charts">
+      <div class="chart-placeholder reveal reveal-d1">
+        <img src="../assets/training_evolution.png" alt="Training Evolution Chart" onerror="this.parentElement.innerHTML='<div style=\'color:var(--white-30);font-size:0.9rem;text-align:center\'><div style=\'font-size:2rem;margin-bottom:12px\'>&#x1F4C8;</div>training_evolution.png</div>'">
+        <span class="chart-label">تطور التدريب &mdash; Training Evolution</span>
+      </div>
+      <div class="chart-placeholder reveal reveal-d2">
+        <img src="../assets/category_radar.png" alt="Category Radar Chart" onerror="this.parentElement.innerHTML='<div style=\'color:var(--white-30);font-size:0.9rem;text-align:center\'><div style=\'font-size:2rem;margin-bottom:12px\'>&#x1F4CA;</div>category_radar.png</div>'">
+        <span class="chart-label">نتائج الفئات &mdash; Category Radar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VERSION HIGHLIGHTS
+     ══════════════════════════════════════════ -->
+<section class="changelog" id="changelog">
+  <div class="container">
+    <div class="changelog-header reveal">
+      <span class="section-label">What's New</span>
+      <h2 class="section-title">الجديد في هذا الإصدار</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal reveal-d1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">إصلاح المعالج الرسومي</div>
+        <div class="timeline-en">Metal shader warmup fix &mdash; faster cold starts</div>
+      </div>
+      <div class="timeline-item reveal reveal-d1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">أدوات مدمجة</div>
+        <div class="timeline-en">Prayer times, Hijri date, Weather, Zakat calculator</div>
+      </div>
+      <div class="timeline-item reveal reveal-d2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">كاميرا ذكية</div>
+        <div class="timeline-en">VLM camera analysis &mdash; read Arabic text from photos</div>
+      </div>
+      <div class="timeline-item reveal reveal-d2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">دليل سعودي</div>
+        <div class="timeline-en">Saudi service guides &mdash; Absher, Tawakkalna, Nafath, Sadad</div>
+      </div>
+      <div class="timeline-item reveal reveal-d3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">تصميم جديد</div>
+        <div class="timeline-en">Black + gold redesign with Liquid Glass elements</div>
+      </div>
+      <div class="timeline-item reveal reveal-d3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">اختصارات Siri</div>
+        <div class="timeline-en">App Intents &mdash; trigger Aamil from Siri and Shortcuts</div>
+      </div>
+      <div class="timeline-item reveal reveal-d4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">27 نموذج</div>
+        <div class="timeline-en">Expanded model library &mdash; from 0.5GB to 5.2GB</div>
+      </div>
+      <div class="timeline-item reveal reveal-d4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-title">64 اختبار</div>
+        <div class="timeline-en">Full test coverage &mdash; 64 tests across all modules</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     BUILT BY
+     ══════════════════════════════════════════ -->
+<section class="built-by">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="built-by-title">صُنع بواسطة مجتمع الذكاء الاصطناعي السعودي</h2>
+      <p class="built-by-en en">Built by the Saudi AI Community</p>
+    </div>
+    <div class="built-by-links reveal reveal-d1">
+      <a href="https://x.com/Mosescreates" target="_blank" rel="noopener noreferrer" class="built-by-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @Mosescreates
+      </a>
+      <a href="https://testflight.apple.com/join/6P9t23VG" target="_blank" rel="noopener noreferrer" class="built-by-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        جرّب عبر TestFlight
+      </a>
+    </div>
+    <p class="reveal reveal-d2" style="margin-top:24px;font-size:0.85rem;color:rgba(255,255,255,0.35);max-width:500px;text-align:center;line-height:1.7">
+      <strong style="color:rgba(255,255,255,0.5)">كيف تجرّب عامل؟</strong><br>
+      1. افتح الرابط من iPhone<br>
+      2. ثبّت تطبيق TestFlight من App Store إذا ما عندك<br>
+      3. ارجع للرابط واضغط "Accept"<br>
+      4. حمّل عامل وابدأ
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-privacy reveal">
+      <span class="lock" aria-hidden="true">&#x1F512;</span>
+      <p>بياناتك لا تغادر جهازك أبدا &mdash; <span class="en" style="color:var(--white-30)">Your data never leaves your device</span></p>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        عامل <span class="en" style="font-weight:300;color:var(--white-30);font-size:0.85em">Aamil</span>
+        <small>&copy; 2026 Majana LLC</small>
+      </div>
+      <div class="footer-links">
+        <a href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="https://testflight.apple.com/join/6P9t23VG" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          TestFlight
+        </a>
+        <a href="https://x.com/Mosescreates" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════ -->
+<script>
+(function(){
+  'use strict';
+
+  /* ── Intersection Observer for reveal animations ── */
+  var reveals = document.querySelectorAll('.reveal');
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  },{
+    threshold:0.12,
+    rootMargin:'0px 0px -60px 0px'
+  });
+
+  reveals.forEach(function(el){observer.observe(el)});
+
+  /* ── Navbar scroll effect ── */
+  var nav = document.getElementById('nav');
+  var scrolled = false;
+
+  function onScroll(){
+    var should = window.scrollY > 40;
+    if(should !== scrolled){
+      scrolled = should;
+      nav.classList.toggle('scrolled', should);
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ── Smooth scroll for nav links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
